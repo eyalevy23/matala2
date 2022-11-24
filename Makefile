@@ -12,4 +12,4 @@ connections: libclassw.a
 	gcc -Wall main.c libclassw.a -o connections
 
 clean:
-	rm -f  *.o  *.a *.so mains
+	rm -f  *.o  *.a *.so connections
