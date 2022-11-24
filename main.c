@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "my_mat.h"
 
-
 void makeMtx(int N,int (*mtx)[N][N]) {
     int input;
     for(int i=0; i<N; i++) {
@@ -22,40 +21,36 @@ int main() {
     int a,b;
     int N = 10;
     int mtx[N][N];
-    int (*mtxPointer)[N][N] = &mtx;
     char ch;
-    while (1){
-        scanf("%c", &ch);
-
+    scanf("%c", &ch);
+    while (ch != 'D'){
         if(ch == 'A'){
-            makeMtx(N, mtxPointer);
-            f1(N, mtxPointer); 
+            makeMtx(N, &mtx);
+            f1(N, &mtx);
         }
+
         else if(ch == 'B'){
             a = integerInput();
             b = integerInput();
-            int isPath = f2(a, b, N, mtxPointer);
+            int isPath = f2(a, b, N, &mtx);
             if(isPath > 0){
                 printf("True\n");
             } else{
                 printf("False\n");
             }
         }
+
         else if(ch == 'C'){
             a = integerInput();
             b = integerInput();
-            int shortDist = f2(a, b, N, mtxPointer);
+            int shortDist = f2(a, b, N, &mtx);
             if(shortDist == 0){
                 printf("-1\n");
             } else {
             printf("%d\n", shortDist);
             }
         }
-        else if(ch == 'D'){
-            break;
-        }
-    }
-    
+        scanf("%c", &ch);
+    } 
     return 0;
-
 }
