@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "my_mat.h"
+#include <stdlib.h>
 
 void makeMtx(int N,int (*mtx)[N][N]) {
     int input;
@@ -17,12 +18,17 @@ int integerInput() {
     return input;
 }
 
-int main() {
-    int a,b;
-    int N = 10;
-    int mtx[N][N];
+char charInput() {
     char ch;
     scanf("%c", &ch);
+    return ch;
+}
+
+int main() {
+    int a,b;
+    int N = 2;
+    int mtx[N][N];
+    char ch = charInput();
     while (ch != 'D'){
         if(ch == 'A'){
             makeMtx(N, &mtx);
@@ -50,7 +56,7 @@ int main() {
             printf("%d\n", shortDist);
             }
         }
-        scanf("%c", &ch);
+        ch = charInput();
     } 
     return 0;
 }

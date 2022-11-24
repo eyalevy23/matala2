@@ -10,4 +10,4 @@ clean:
 	rm -f  *.o  *.a *.so connections
 
 leakTest: clean connections
-	valgrind --leak-check=full --show-leak-kinds=all ./connections
+	valgrind --leak-check=full --show-leak-kinds=all --error-exitcode=1 ./connections
