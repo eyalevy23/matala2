@@ -5,7 +5,7 @@
 int main() {
     
     while (1){
-        int N = 4;
+        int N = 10;
         int mtx[N][N];
         int (*a)[N][N] = &mtx;
         char ch;
