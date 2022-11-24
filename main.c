@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "my_mat.h"
-#include <stdlib.h>
 
 void makeMtx(int N,int (*mtx)[N][N]) {
     int input;
