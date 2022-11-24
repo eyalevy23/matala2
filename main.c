@@ -26,7 +26,7 @@ char charInput() {
 
 int main() {
     int a,b;
-    int N = 2;
+    int N = 10;
     int mtx[N][N];
     char ch = charInput();
     while (ch != 'D'){
