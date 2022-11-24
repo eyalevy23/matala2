@@ -22,9 +22,9 @@ int main() {
             scanf("%d", &integer2b);
             int ansB = f2(integer1b, integer2b, N, a);
             if(ansB > 0){
-                printf("True");
+                printf("True\n");
             } else{
-                printf("False");
+                printf("False\n");
             }
         }
         else if(ch == 'C'){
@@ -33,9 +33,9 @@ int main() {
             scanf("%d", &integer2c);
             int ansC = f2(integer1c, integer2c, N, a);
             if(ansC == 0){
-                printf("-1");
+                printf("-1\n");
             } else {
-            printf("%d", ansC);
+            printf("%d\n", ansC);
             }
         }
         else if(ch == 'D'){
