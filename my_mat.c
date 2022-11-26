@@ -13,30 +13,51 @@ int getMin(int a, int b){
     } return b;
 }
 
-void f1(int N, int (*mtx)[N][N]){
-    int x, y, sum, min;
-    for (int k = 0; k <= N; k++) {
-            // Pick all vertices as source one by one
+void mtxFill(int mtx[N][N]){
+    for(int i=0; i<N; i++) {
+        for(int j=0; j<N; j++) {
+            scanf("%d", &mtx[i][j]);
+        }
+    }
+}
+
+void F_W_Algo(int mtx[N][N]){
+    mtxFill(mtx);
+    int x, y, min, sum;
+    for (int k = 0; k < N; k++) {
             for (int i = 0; i < N; i++) {
-                // Pick all vertices as destination for the
-                // above picked source
                 for (int j = 0; j < N; j++) {
-                    // If vertex k is on the shortest path from
-                    // i to j, then update the value of
-                    // dist[i][j]
-                    x = (*mtx)[i][k];
-                    y = (*mtx)[k][j];
+                    x = mtx[i][k];
+                    y = mtx[k][j];
                     sum = x + y;
-                    if(x == 0 || y == 0) sum = 0;
-                    min = getMin((*mtx)[i][j], sum);
-                    if(i == j) min = 0;
-                    (*mtx)[i][j] = min;
+                    if(x == 0 || y == 0){
+                        sum = 0;
+                    }
+                    min = getMin(mtx[i][j], sum);
+                    if(i == j){
+                        min = 0;
+                    }
+                    mtx[i][j] = min;
                 }
             }
         }
 }
 
-int f2(int i, int j,int N, int (*mtx)[N][N]) {
-    return (*mtx)[i][j];
-}
+void isPath(char ch,int mtx[N][N]) {
+    int i,j;
+    scanf("%d %d", &i, &j);
+    if (ch == 'B'){
+        if(mtx[i][j]){
+            printf("True\n");
+        }else {
+            printf("False\n");
+        }
+    } else{ //  if(ch == 'C')
+        if(mtx[i][j]){
+            printf("%d\n", mtx[i][j]);
+        }else{
+            printf("-1\n");
+        }
+    }
 
+}

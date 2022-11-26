@@ -1,9 +1,10 @@
 #ifndef MY_MAT_H
 #define MY_MAT_H
+#define N 10
 
-void f1(int N, int (*mtx)[N][N]);
-int f2(int i, int j,int N, int (*mtx)[N][N]);
-void makeMtx(int N,int (*mtx)[N][N]);
+void F_W_Algo( int mtx[N][N]);
+void isPath(char ch, int mtx[N][N]);
 int getMin(int a, int b);
+void mtxFill(int mtx[N][N]);
 
 #endif
