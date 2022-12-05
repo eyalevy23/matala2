@@ -8,6 +8,7 @@ int main() {
     {   
         scanf("%c", &ch);
         if(ch == 'A'){
+            mtxFill(mtx);
             F_W_Algo(mtx);
         }
 
